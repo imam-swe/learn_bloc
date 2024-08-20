@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_bloc/cubit/counter_cubit/counter_cubit.dart';
 import 'package:learn_bloc/cubit/counter_cubit/counter_cubit_state.dart';
+import 'package:learn_bloc/view/cubit_user_profile.dart';
 
 class CubitCounterAppPage extends StatefulWidget {
   const CubitCounterAppPage({super.key});
@@ -34,6 +35,7 @@ class _CubitCounterAppPageState extends State<CubitCounterAppPage> {
                       onPressed: (){
                         context.read<CounterCubit>().counterDecrease();
                       },
+                      heroTag: 1,
                       child: const Icon(Icons.remove),
                     ),
 
@@ -41,9 +43,22 @@ class _CubitCounterAppPageState extends State<CubitCounterAppPage> {
                       onPressed: (){
                         context.read<CounterCubit>().counterIncrease();
                       },
+                      heroTag: 2,
                       child: const Icon(Icons.add),
                     ),
                   ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 24.0),
+                  child: ElevatedButton(
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const CubitUserProfilePage()),
+                      );
+                    },
+                    child: const Text('Fetch User Data'),
+                  ),
                 ),
               ],
             ),
