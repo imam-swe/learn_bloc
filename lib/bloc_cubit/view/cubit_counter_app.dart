@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_bloc/cubit/counter_cubit/counter_cubit.dart';
-import 'package:learn_bloc/cubit/counter_cubit/counter_cubit_state.dart';
-import 'package:learn_bloc/view/cubit_user_profile.dart';
+import 'package:learn_bloc/bloc_cubit/cubit/counter_cubit/counter_cubit.dart';
+import 'package:learn_bloc/bloc_cubit/cubit/counter_cubit/counter_cubit_state.dart';
+import 'package:learn_bloc/bloc_cubit/view/cubit_user_profile.dart';
 
 class CubitCounterAppPage extends StatefulWidget {
   const CubitCounterAppPage({super.key});

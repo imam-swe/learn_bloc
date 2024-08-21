@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'package:learn_bloc/models/user_model.dart';
+import 'package:flutter/widgets.dart';
+import 'package:learn_bloc/bloc_cubit/models/user_model.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService{
@@ -14,16 +15,18 @@ class ApiService{
       if (response.statusCode == 200) {
         var rawData = await response.stream.bytesToString();
         List<dynamic>data = jsonDecode(rawData);
-        data.forEach((element) {
+        for (var element in data) {
           UserModel userModel = UserModel.fromJson(element);
           userData.add(userModel);
-        });
+        }
         return userData;
       } else {
         return [];
       }
     } catch(e){
-      throw e;
+      debugPrint('Catch Error:$e');
+      rethrow;
+    
     }
   }
 }

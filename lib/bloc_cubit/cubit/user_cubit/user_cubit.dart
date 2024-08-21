@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_bloc/cubit/user_cubit/user_cubit_state.dart';
-import 'package:learn_bloc/models/user_model.dart';
-import 'package:learn_bloc/services/api_service.dart';
+import 'package:learn_bloc/bloc_cubit/cubit/user_cubit/user_cubit_state.dart';
+import 'package:learn_bloc/bloc_cubit/models/user_model.dart';
+import 'package:learn_bloc/bloc_cubit/services/api_service.dart';
 
 class UserCubit extends Cubit<UserCubitState> {
   List<UserModel> userList = [];

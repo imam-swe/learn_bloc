@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:learn_bloc/models/user_model.dart';
+import 'package:learn_bloc/bloc_cubit/models/user_model.dart';
 
 abstract class UserCubitState extends Equatable {
   const UserCubitState();
