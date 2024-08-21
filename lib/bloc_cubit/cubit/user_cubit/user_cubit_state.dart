@@ -7,14 +7,12 @@ abstract class UserCubitState extends Equatable {
 
 class UserCubitInit extends UserCubitState {
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 
 }
 
 class UserCubitLoading extends UserCubitState {
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 
 }
