@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_bloc/bloc_pattern/bloc/counter_bloc.dart';
-import 'package:learn_bloc/bloc_pattern/bloc/counter_event.dart';
-import 'package:learn_bloc/bloc_pattern/bloc/counter_state.dart';
+import 'package:learn_bloc/bloc_pattern/bloc/counter_bloc/counter_bloc.dart';
+import 'package:learn_bloc/bloc_pattern/bloc/counter_bloc/counter_event.dart';
+import 'package:learn_bloc/bloc_pattern/bloc/counter_bloc/counter_state.dart';
+import 'package:learn_bloc/bloc_pattern/views/bloc_user_profile.dart';
 
 
 class BlocCounterAppPage extends StatefulWidget {
@@ -59,6 +60,19 @@ class _BlocCounterAppPageState extends State<BlocCounterAppPage> {
                 child: const Icon(Icons.add),
               ),
             ],
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(top: 24.0),
+            child: ElevatedButton(
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const BlocUserProfilePage()),
+                );
+              },
+              child: const Text('Bloc User Profile'),
+            ),
           ),
         ],
       ),

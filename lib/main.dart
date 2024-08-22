@@ -4,7 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:learn_bloc/bloc_cubit/cubit/user_cubit/user_cubit.dart';
 // import 'package:learn_bloc/bloc_cubit/services/api_service.dart';
 // import 'package:learn_bloc/bloc_cubit/view/cubit_counter_app.dart';
-import 'package:learn_bloc/bloc_pattern/bloc/counter_bloc.dart';
+import 'package:learn_bloc/bloc_pattern/bloc/counter_bloc/counter_bloc.dart';
+import 'package:learn_bloc/bloc_pattern/bloc/user_bloc/user_bloc.dart';
 import 'package:learn_bloc/bloc_pattern/views/bloc_counter_app.dart';
 
 void main() {
@@ -17,8 +18,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider( //!Bloc Pattern
-      create: (context) => CounterBloc(),
+    return MultiBlocProvider( //!Bloc Pattern
+      providers: [
+        BlocProvider<CounterBloc>(
+          create: (context) => CounterBloc(),
+        ),
+        BlocProvider<UserBloc>(
+          create: (context) => UserBloc(),
+        ),
+      ],
       child: MaterialApp(
         theme: ThemeData(
           // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
